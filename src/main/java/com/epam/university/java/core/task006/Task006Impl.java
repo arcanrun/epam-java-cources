@@ -11,7 +11,7 @@ public class Task006Impl implements Task006 {
         if (measurements == null) {
             throw new IllegalArgumentException();
         }
-        if(measurements.isEmpty()){
+        if (measurements.isEmpty()) {
             return 0.0;
         }
 
@@ -30,11 +30,17 @@ public class Task006Impl implements Task006 {
         avgAmp = avgAmp / measurements.size();
         avgVolt = avgVolt / measurements.size();
 
-        if(avgAmp == 0){
+        if (avgAmp == 0) {
             return 0.0;
         }
 
-        double res = ((numerator / measurements.size()) - (avgAmp * avgVolt)) / ((denominator / measurements.size()) - (Math.pow(avgAmp, 2)));
+        double res = (
+                (
+                        numerator / measurements.size()) - (avgAmp * avgVolt))
+                /
+                (
+                        (denominator / measurements.size()) - (Math.pow(avgAmp, 2))
+                );
         res = Math.round(res * 1000);
         return res / 1000;
     }
