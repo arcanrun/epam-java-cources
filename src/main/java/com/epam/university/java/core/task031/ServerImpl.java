@@ -10,7 +10,7 @@ import java.util.Vector;
 
 public class ServerImpl implements Server {
     private ServerSocket serverSocket;
-    public static final int PORT = 8080;
+    public static final int PORT = 8189;
     public static final String HOST = "localhost";
     private DataInputStream in;
     private DataOutputStream out;
@@ -25,8 +25,7 @@ public class ServerImpl implements Server {
         return messages.remove(messages.size() - 1);
     }
 
-    @Override
-    public void start() {
+    public ServerImpl(){
         messages = new Vector<>();
         clients = new Vector<>();
         try {
@@ -34,20 +33,24 @@ public class ServerImpl implements Server {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void start() {
         new Thread(() -> {
             try {
                 while (true) {
+                    System.out.println("waiting for connection...");
                     Socket socket = serverSocket.accept();
-                    System.out.println("New client has been connected: " + socket.getInetAddress() + " " + socket.getLocalPort());
+                    System.out.println("New client has been connected: " + socket.getInetAddress() + " " + socket.getPort());
                     new ServerClient(this, socket);
-//                    in = new DataInputStream(socket.getInputStream());
-//                    out = new DataOutputStream(socket.getOutputStream());
-//                    while(true){
-//                        String messageFromClient = in.readUTF();
-//                        messages.add(messageFromClient);
-//                    }messageFromClient
                 }
             } catch (IOException e) {
+                try {
+                    serverSocket.close();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
                 e.printStackTrace();
             }
         }).start();

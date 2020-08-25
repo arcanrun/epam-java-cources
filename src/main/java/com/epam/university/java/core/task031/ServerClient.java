@@ -23,6 +23,7 @@ public class ServerClient {
             while (true) {
                 try {
                     String str = in.readUTF();
+                    System.out.println("SERVER CLIENT HAS BEEN ACCEPTED MESSAGE: " + str);
                     server.putMessage(str);
                 } catch (IOException e) {
                     e.printStackTrace();
