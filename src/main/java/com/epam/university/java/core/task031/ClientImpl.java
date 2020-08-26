@@ -3,6 +3,7 @@ package com.epam.university.java.core.task031;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.Socket;
 
 public class ClientImpl implements Client {
@@ -13,6 +14,7 @@ public class ClientImpl implements Client {
     @Override
     public void sendMessage(String message) {
         try {
+            System.out.println("CLIENT SAYS: " + message);
             out.writeUTF(message);
         } catch (IOException e) {
             e.printStackTrace();
@@ -22,10 +24,15 @@ public class ClientImpl implements Client {
     @Override
     public void start() {
         try {
-            socket = new Socket(ServerImpl.HOST, ServerImpl.PORT);
+            socket = new Socket(InetAddress.getLocalHost(), ServerImpl.PORT);
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {
+            try {
+                socket.close();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
             e.printStackTrace();
         }
 //        new Thread(() -> {
