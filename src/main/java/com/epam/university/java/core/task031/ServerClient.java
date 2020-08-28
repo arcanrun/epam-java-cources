@@ -10,6 +10,10 @@ public class ServerClient {
     private DataOutputStream out;
     private ServerImpl server;
 
+    /**
+     * ServerClinet.
+     */
+
     public ServerClient(ServerImpl server, Socket socket) {
         this.server = server;
         this.server.addClient(this);

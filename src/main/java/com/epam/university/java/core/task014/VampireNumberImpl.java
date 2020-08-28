@@ -4,6 +4,9 @@ public class VampireNumberImpl implements VampireNumber {
     private int first;
     private int second;
     private int multiplication;
+    /**
+     * VampireConstructor.
+     */
 
     public VampireNumberImpl(int multiplication, int first, int second) {
         this.multiplication = multiplication;
@@ -27,11 +30,11 @@ public class VampireNumberImpl implements VampireNumber {
     }
 
     @Override
-    public boolean equals(Object value){
-        if(this == value){
+    public boolean equals(Object value) {
+        if (this == value) {
             return true;
         }
-        if(value == null || getClass() != value.getClass()){
+        if (value == null || getClass() != value.getClass()) {
             return false;
         }
         VampireNumber vampireNumber = (VampireNumber) value;

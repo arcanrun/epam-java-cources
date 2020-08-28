@@ -2,7 +2,7 @@ package com.epam.university.java.core.task012;
 
 import java.util.Collection;
 
-public class GraphImpl implements Graph{
+public class GraphImpl implements Graph {
     @Override
     public void createEdge(int from, int to) {
 

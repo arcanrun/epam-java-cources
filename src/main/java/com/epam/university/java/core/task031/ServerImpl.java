@@ -19,13 +19,17 @@ public class ServerImpl implements Server {
 
     @Override
     public String readMessage() {
-        if(messages.size() == 0){
+        if (messages.size() == 0) {
             return "";
         }
         return messages.remove(messages.size() - 1);
     }
 
-    public ServerImpl(){
+    /**
+     * ServerImpl.
+     */
+
+    public ServerImpl() {
         messages = new Vector<>();
         clients = new Vector<>();
         try {
@@ -42,7 +46,10 @@ public class ServerImpl implements Server {
                 while (true) {
                     System.out.println("waiting for connection...");
                     Socket socket = serverSocket.accept();
-                    System.out.println("New client has been connected: " + socket.getInetAddress() + " " + socket.getPort());
+                    System.out.println("New client has been connected: "
+                            + socket.getInetAddress()
+                            + " "
+                            + socket.getPort());
                     new ServerClient(this, socket);
                 }
             } catch (IOException e) {
@@ -61,12 +68,12 @@ public class ServerImpl implements Server {
         return serverSocket;
     }
 
-    public void putMessage(String message){
+    public void putMessage(String message) {
         System.out.println("Message has been received!!!===>" + message);
         messages.add(message);
     }
 
-    public void addClient(ServerClient serverClient){
+    public void addClient(ServerClient serverClient) {
         clients.add(serverClient);
     }
 

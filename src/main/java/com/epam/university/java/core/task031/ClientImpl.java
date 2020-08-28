@@ -35,12 +35,6 @@ public class ClientImpl implements Client {
             }
             e.printStackTrace();
         }
-//        new Thread(() -> {
-//            try {
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }).start();
     }
 
     @Override
