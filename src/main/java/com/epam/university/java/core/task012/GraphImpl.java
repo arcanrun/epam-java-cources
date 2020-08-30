@@ -15,6 +15,12 @@ public class GraphImpl implements Graph {
     private int vertexCount;
     private Stack<Integer> stack;
 
+    /**
+     * Graph constructor.
+     *
+     * @param vertexCount count of vertex in graph.
+     */
+
     public GraphImpl(int vertexCount) {
         this.vertexCount = vertexCount;
         stack = new Stack<>();
@@ -65,6 +71,14 @@ public class GraphImpl implements Graph {
 
 
     }
+
+    /**
+     * Check if exist path between to vertex. Using deep depth-first search algorithm.
+     *
+     * @param from start vertex.
+     * @param to   end vertex.
+     * @return boolean
+     */
 
     public boolean isPathExist(int from, int to) {
         dfs(from - 1);
