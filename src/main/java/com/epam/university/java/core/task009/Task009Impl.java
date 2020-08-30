@@ -13,6 +13,9 @@ import java.util.TreeSet;
 public class Task009Impl implements Task009 {
     @Override
     public Collection<String> countWords(File sourceFile) {
+        if (sourceFile == null) {
+            throw new IllegalArgumentException();
+        }
         Set<String> setStr = new TreeSet<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(sourceFile))) {
             String str;

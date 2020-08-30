@@ -30,7 +30,7 @@ public class Task002Impl implements Task002 {
     @Override
     public String right(String sourceString, String separator) {
         check(sourceString, separator);
-        return sourceString.substring(sourceString.indexOf(separator) + 1).trim();
+        return sourceString.substring(sourceString.indexOf(separator) + separator.length()).trim();
     }
 
     @Override

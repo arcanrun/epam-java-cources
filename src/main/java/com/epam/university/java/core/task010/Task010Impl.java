@@ -10,6 +10,9 @@ import java.util.Map;
 public class Task010Impl implements Task010 {
     @Override
     public Map<String, Integer> countWordNumbers(File source) {
+        if (source == null) {
+            throw new IllegalArgumentException();
+        }
         Map<String, Integer> map = new HashMap<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(source))) {
             String str;
@@ -27,7 +30,6 @@ public class Task010Impl implements Task010 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(map);
         return map;
     }
 }
