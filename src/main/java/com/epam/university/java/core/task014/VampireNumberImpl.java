@@ -27,16 +27,23 @@ public class VampireNumberImpl implements VampireNumber {
     }
 
     @Override
-    public boolean equals(Object value){
-        if(this == value){
+    public boolean equals(Object value) {
+        if (this == value) {
             return true;
         }
-        if(value == null || getClass() != value.getClass()){
+        if (value == null || getClass() != value.getClass()) {
             return false;
         }
         VampireNumber vampireNumber = (VampireNumber) value;
-        return vampireNumber.getFirst() == first
-                && vampireNumber.getSecond() == second
-                && vampireNumber.getMultiplication() == multiplication;
+
+        return ((vampireNumber.getFirst() * vampireNumber.getSecond()) == (this.first * this.second)
+                && vampireNumber.getMultiplication() == multiplication);
+    }
+
+    @Override
+    public String toString() {
+
+        return multiplication + ": [" + first + ", " + second + "]\n";
+
     }
 }
