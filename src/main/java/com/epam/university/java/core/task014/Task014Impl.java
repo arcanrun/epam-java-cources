@@ -32,11 +32,14 @@ public class Task014Impl implements Task014 {
     }
 
     private boolean fangCheck(int orig, int fang1, int fang2) {
-        if (Long.toString(fang1).endsWith("0") && Long.toString(fang2).endsWith("0")) return false;
+        if (Long.toString(fang1).endsWith("0") && Long.toString(fang2).endsWith("0")) {
+            return false;
+        }
 
         int origLen = numDigits(orig);
-        if (numDigits(fang1) != origLen / 2 || numDigits(fang2) != origLen / 2) return false;
-
+        if (numDigits(fang1) != origLen / 2 || numDigits(fang2) != origLen / 2) {
+            return false;
+        }
         byte[] origBytes = Long.toString(orig).getBytes();
         byte[] fangBytes = (Long.toString(fang1) + Long.toString(fang2)).getBytes();
         Arrays.sort(origBytes);
