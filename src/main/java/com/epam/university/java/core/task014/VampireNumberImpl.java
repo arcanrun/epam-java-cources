@@ -38,8 +38,15 @@ public class VampireNumberImpl implements VampireNumber {
             return false;
         }
         VampireNumber vampireNumber = (VampireNumber) value;
-        return vampireNumber.getFirst() == first
-                && vampireNumber.getSecond() == second
-                && vampireNumber.getMultiplication() == multiplication;
+
+        return ((vampireNumber.getFirst() * vampireNumber.getSecond()) == (this.first * this.second)
+                && vampireNumber.getMultiplication() == multiplication);
+    }
+
+    @Override
+    public String toString() {
+
+        return multiplication + ": [" + first + ", " + second + "]\n";
+
     }
 }
