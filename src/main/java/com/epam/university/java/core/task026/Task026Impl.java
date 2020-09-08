@@ -3,6 +3,9 @@ package com.epam.university.java.core.task026;
 public class Task026Impl implements Task026 {
     @Override
     public String encrypt(String sourceString, int shift) {
+        if (sourceString == null) {
+            throw new IllegalArgumentException();
+        }
         StringBuilder res = new StringBuilder();
         for (int i = 0; i < sourceString.length(); i++) {
             char c = sourceString.charAt(i);

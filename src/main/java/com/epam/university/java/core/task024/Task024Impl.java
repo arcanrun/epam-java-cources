@@ -8,6 +8,9 @@ import java.util.stream.Collectors;
 public class Task024Impl implements Task024 {
     @Override
     public Collection<String> getWordsCount(String source) {
+        if (source == null) {
+            throw new IllegalArgumentException();
+        }
         if (source.length() == 0) {
             return Collections.emptyList();
         }

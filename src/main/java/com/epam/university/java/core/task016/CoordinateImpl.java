@@ -33,11 +33,12 @@ public class CoordinateImpl implements Coordinate {
 
     @Override
     public String toString() {
-        return "CoordinateImpl{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        return "CoordinateImpl{"
+                + "x=" + x
+                + ", y=" + y
+                + '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

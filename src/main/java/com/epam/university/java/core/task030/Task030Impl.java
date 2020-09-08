@@ -11,6 +11,9 @@ import java.util.Locale;
 public class Task030Impl implements Task030 {
     @Override
     public int daysBetweenDates(LocalDate dateStart, LocalDate dateEnd) {
+        if (dateStart == null || dateEnd == null) {
+            throw new IllegalArgumentException();
+        }
         return (int) ChronoUnit.DAYS.between(dateStart, dateEnd);
     }
 

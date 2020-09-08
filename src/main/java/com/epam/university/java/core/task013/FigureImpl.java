@@ -65,9 +65,10 @@ public class FigureImpl implements Figure {
 
     /**
      * JavaDoc.
+     *
      * @param a1 a1.
      * @param a2 a2.
-     * @param b b.
+     * @param b  b.
      * @return double
      */
     public double metric(Vertex a1, Vertex a2, Vertex b) {
@@ -91,7 +92,9 @@ public class FigureImpl implements Figure {
         }
         for (int i = 1; i < vertexList.size(); i++) {
             int j = i;
-            while (j > 1 && (metric(vertexList.get(0), vertexList.get(j - 1), vertexList.get(j)) < 0)) {
+            while (j > 1 && (metric(vertexList.get(0),
+                    vertexList.get(j - 1),
+                    vertexList.get(j)) < 0)) {
                 Vertex tmp = vertexList.get(j);
                 vertexList.set(j, vertexList.get(j - 1));
                 vertexList.set(j - 1, tmp);
