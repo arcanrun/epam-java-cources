@@ -15,7 +15,9 @@ public class RobotImpl implements Robot {
     private Direction currentDirection;
     private int currentAngle;
 
-
+    /**
+     * Constructor with init values.
+     */
     public RobotImpl() {
         robotPosition = new RobotPositionImpl(0, 0);
         startRobotPosition = new RobotPositionImpl(0, 0);
@@ -73,35 +75,35 @@ public class RobotImpl implements Robot {
         return robotPosition.equals(startRobotPosition);
     }
 
-    private void turnLeft(){
+    private void turnLeft() {
         currentAngle += 90;
-        if(currentAngle == 90) {
+        if (currentAngle == 90) {
             currentDirection = Direction.UP;
         }
-        if(currentAngle == 180){
+        if (currentAngle == 180) {
             currentDirection = Direction.LEFT;
         }
-        if(currentAngle == 270){
+        if (currentAngle == 270) {
             currentDirection = Direction.DOWN;
         }
-        if(currentAngle == 360){
+        if (currentAngle == 360) {
             currentAngle = 0;
             currentDirection = Direction.RIGHT;
         }
     }
 
-    private void turnRight(){
+    private void turnRight() {
         currentAngle -= 90;
-        if(currentAngle == -90) {
+        if (currentAngle == -90) {
             currentDirection = Direction.DOWN;
         }
-        if(currentAngle == -180){
+        if (currentAngle == -180) {
             currentDirection = Direction.LEFT;
         }
-        if(currentAngle == -270){
+        if (currentAngle == -270) {
             currentDirection = Direction.UP;
         }
-        if(currentAngle == -360){
+        if (currentAngle == -360) {
             currentAngle = 0;
             currentDirection = Direction.RIGHT;
         }
