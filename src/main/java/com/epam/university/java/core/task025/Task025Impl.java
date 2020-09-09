@@ -6,7 +6,14 @@ public class Task025Impl implements Task025 {
         if (sourceMessage == null) {
             throw new IllegalArgumentException();
         }
-        String correctMsg = "SOS".repeat(sourceMessage.length() / 3);
+        int lengthSourceMsg = sourceMessage.length();
+        if (lengthSourceMsg % 3 != 0) {
+            while (lengthSourceMsg % 3 != 0) {
+                lengthSourceMsg += 1;
+            }
+        }
+        String correctMsg = "SOS".repeat(lengthSourceMsg / 3);
+        correctMsg = correctMsg.substring(0, sourceMessage.length());
         int count = 0;
         for (int i = 0; i < sourceMessage.length(); i++) {
             if (correctMsg.charAt(i) != sourceMessage.charAt(i)) {
