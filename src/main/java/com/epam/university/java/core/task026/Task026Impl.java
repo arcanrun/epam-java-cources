@@ -28,6 +28,6 @@ public class Task026Impl implements Task026 {
 
     @Override
     public String decrypt(String encryptedString, int shift) {
-        return encrypt(encryptedString, 26 - shift);
+        return encrypt(encryptedString, 26 - (shift % 26));
     }
 }
