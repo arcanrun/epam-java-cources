@@ -9,9 +9,8 @@ public class Task023Impl implements Task023 {
         if (phoneString == null) {
             throw new IllegalArgumentException();
         }
-        Pattern pattern = Pattern.compile("(\\+{0,1}[78]\\s{0,1}\\({0,1})([\\s-]{0,1}\\d{3})"
-                + "(\\){0,1}[\\s-]{0,1}\\d{3})"
-                + "([\\s-]{0,1}\\d{2})([\\s-]{0,1}\\d{2})");
+        Pattern pattern = Pattern.compile("(\\+{0,1}[78]\\s{0,1}\\({0,1}[\\s-]{0,1})" +
+                "(\\d{3})(\\){0,1}[\\s-]{0,1}\\d{3})([\\s-]{0,1}\\d{2})([\\s-]{0,1}\\d{2})");
         Matcher matcher = pattern.matcher(phoneString);
         String res;
         if (matcher.find()) {
