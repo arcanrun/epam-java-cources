@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class BeanDefinitionRegistryImpl implements BeanDefinitionRegistry{
+public class BeanDefinitionRegistryImpl implements BeanDefinitionRegistry {
     private Map<String, BeanDefinition> registry = new HashMap<>();
 
     @Override

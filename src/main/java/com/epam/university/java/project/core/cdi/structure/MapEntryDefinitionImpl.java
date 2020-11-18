@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class MapEntryDefinitionImpl implements MapDefinition.MapEntryDefinition{
+public class MapEntryDefinitionImpl implements MapDefinition.MapEntryDefinition {
     @XmlElement
     private String key;
 

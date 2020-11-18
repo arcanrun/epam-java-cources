@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlValue;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ListItemDefinitionImpl implements ListDefinition.ListItemDefinition{
+public class ListItemDefinitionImpl implements ListDefinition.ListItemDefinition {
     @XmlValue
     private String value;
 

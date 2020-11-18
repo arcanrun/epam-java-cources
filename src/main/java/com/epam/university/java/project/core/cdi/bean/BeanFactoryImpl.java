@@ -1,11 +1,20 @@
 package com.epam.university.java.project.core.cdi.bean;
 
-import com.epam.university.java.project.core.cdi.structure.*;
+import com.epam.university.java.project.core.cdi.structure.StructureDefinition;
+import com.epam.university.java.project.core.cdi.structure.ListDefinition;
+import com.epam.university.java.project.core.cdi.structure.ListDefinitionImpl;
+import com.epam.university.java.project.core.cdi.structure.MapDefinitionImpl;
+import com.epam.university.java.project.core.cdi.structure.MapDefinition;
+
 
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Collection;
+import java.util.List;
+import java.util.ArrayList;
 
-public class BeanFactoryImpl implements BeanFactory{
+public class BeanFactoryImpl implements BeanFactory {
     private BeanDefinitionRegistry beanDefinitionRegistry;
     private Map<BeanDefinition, Object> singletons = new HashMap<>();
 
@@ -31,7 +40,12 @@ public class BeanFactoryImpl implements BeanFactory{
         return (T) getBean(beanName);
     }
 
-
+    /**
+     * aaa.
+     * @param definition asd.
+     * @param <T> asd.
+     * @return asd.
+     */
     public <T> T getBean(BeanDefinition definition) {
         try {
             Class<T> beanClass = (Class<T>) Class.forName(definition.getClassName());

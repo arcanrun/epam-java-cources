@@ -1,11 +1,16 @@
 package com.epam.university.java.project.core.cdi.bean;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
 import java.util.Collection;
 
 @XmlRootElement(name = "bean")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class BeanDefinitionImpl implements BeanDefinition{
+public class BeanDefinitionImpl implements BeanDefinition {
     @XmlAttribute
     private String id;
 

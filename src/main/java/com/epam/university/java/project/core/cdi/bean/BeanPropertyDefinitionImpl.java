@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 
-public class BeanPropertyDefinitionImpl implements BeanPropertyDefinition{
+public class BeanPropertyDefinitionImpl implements BeanPropertyDefinition {
 
     @XmlAttribute
     private String name;

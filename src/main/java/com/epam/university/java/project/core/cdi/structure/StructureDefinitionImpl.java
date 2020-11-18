@@ -3,7 +3,7 @@ package com.epam.university.java.project.core.cdi.structure;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 
-public class StructureDefinitionImpl implements StructureDefinition{
+public class StructureDefinitionImpl implements StructureDefinition {
     @XmlElements({
             @XmlElement(name = "stringMap", type = MapDefinitionImpl.class),
             @XmlElement(name = "objectMap", type = MapDefinitionImpl.class)

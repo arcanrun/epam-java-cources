@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class MapDefinitionImpl implements MapDefinition{
+public class MapDefinitionImpl implements MapDefinition {
     @XmlElement(type = MapEntryDefinitionImpl.class,
             name = "entry")
     Collection<MapEntryDefinition> list = new ArrayList<>();
